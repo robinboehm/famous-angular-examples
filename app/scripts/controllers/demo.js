@@ -18,44 +18,39 @@ angular.module('integrationApp')
       'famo.us',
       'angular',
       'javascript',
-      'san francisco',
-      'web'
+      'web',
+      'wow',
+      'such',
+      'great'
     ];
 
-    var elements = 70;
+    var ELEMENTS = 150;
+    var START_HUE = 320;
+    var HUE_RANGE = 100;
+    var SATURATION = 50;
+    var LIGHTNESS = 50;
+    var getHSL = function(index){
+      var hue = (START_HUE + (HUE_RANGE * (index / ELEMENTS)));
+      return "hsl(" +
+        hue + "," +
+        SATURATION + "%,"+
+        LIGHTNESS + "%)";
+    }
 
-    $scope.surfs = _.map(_.range(elements), function(i){
+    $scope.surfs = _.map(_.range(ELEMENTS), function(i){
       return {
         content: _.sample(strings),
-        bgColor: _.sample(colors)
+        bgColor: getHSL(i)
       }
     });
 
     setInterval(function(){
-      for(var i = 0; i < elements; i++){
+      for(var i = 0; i < ELEMENTS; i++){
         $scope.surfs[i].content = _.sample(strings);
-        $scope.surfs[i].bgColor = _.sample(colors);
       }
       if(!$scope.$$phase)
         $scope.$apply();
-    }, 333);
+    }, 500);
 
-
-    $scope.yTransitionable = new Transitionable(0);
-    //TODO:  make syncs declarative
-    var sync = new GenericSync(function() {
-      return $scope.yTransitionable.get(0);
-    }, {direction: GenericSync.DIRECTION_Y});
-
-    sync.on('update', function(data) {
-      $scope.yTransitionable.set(data.p);
-    });
-
-    //TODO:  make event handlers declarative
-    $scope.eventHandler = new EventHandler();
-    $scope.eventHandler.pipe(sync);
-
-    $scope.getY = function(index){
-      return index * (20 + $scope.yTransitionable.get());
-    }
+    $scope.enginePipe = new EventHandler();
   });
