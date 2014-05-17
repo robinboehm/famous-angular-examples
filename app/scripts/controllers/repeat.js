@@ -17,10 +17,9 @@ angular.module('integrationApp')
     $scope.$on('$destroy', function() {
       console.log($scope, "heard $destroy");
     });
-
   })
-  .animation('.fade-out', function(famous) {
-    var TransitionableTransform = famous["famous/transitions/TransitionableTransform"];
+  .animation('.fade-out', function($famous) {
+    var TransitionableTransform = $famous["famous/transitions/TransitionableTransform"];
 
 
     var getModifier = function(el) {

@@ -1,10 +1,10 @@
 'use strict';
 
 angular.module('integrationApp')
-  .controller('DemoCtrl', function ($scope, famous) {
-    var GenericSync = famous['famous/inputs/GenericSync'];
-    var Transitionable = famous['famous/transitions/Transitionable']
-    var EventHandler = famous['famous/core/EventHandler']
+  .controller('DemoCtrl', function ($scope, $famous) {
+    var GenericSync = $famous['famous/inputs/GenericSync'];
+    var Transitionable = $famous['famous/transitions/Transitionable']
+    var EventHandler = $famous['famous/core/EventHandler']
 
     var colors = [
       '#869B40',

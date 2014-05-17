@@ -1,16 +1,16 @@
 'use strict';
 
 angular.module('integrationApp')
-  .controller('TimbreCtrl', function ($scope, famous, testFilterService, Fakedata, $timeout) {
+  .controller('TimbreCtrl', function ($scope, $famous, testFilterService, Fakedata, $timeout) {
   	window.a = $scope
-    var EventHandler = famous['famous/core/EventHandler'];
-    var GenericSync = famous['famous/inputs/GenericSync'];
-    var Transitionable = famous['famous/transitions/Transitionable'];
-    var Easing = famous['famous/transitions/Easing'];
-    var MouseSync       = require('famous/inputs/MouseSync');
-    var fc       = famous['famous/inputs/FastClick'];
-    var TouchSync       = require('famous/inputs/TouchSync');
-    var Timer           = require('famous/utilities/Timer');
+	var EventHandler = $famous['famous/core/EventHandler'];
+	var GenericSync = $famous['famous/inputs/GenericSync'];
+	var Transitionable = $famous['famous/transitions/Transitionable'];
+	var Easing = $famous['famous/transitions/Easing'];
+	var MouseSync = require('famous/inputs/MouseSync');
+	var fc = $famous['famous/inputs/FastClick'];
+	var TouchSync = require('famous/inputs/TouchSync');
+	var Timer = require('famous/utilities/Timer');
     $scope.enginePipe = new EventHandler();
     $scope.enginePipe2 = new EventHandler();
     $scope.search = {name:''}
@@ -19,7 +19,7 @@ angular.module('integrationApp')
 
     console.log('events', $scope.events);
 
-    console.log('normal controller bag', famous.bag._contents); //has access to items created in DOM
+    console.log('normal controller bag', $famous.bag._contents); //has access to items created in DOM
 
     $scope.strips = [
       {
@@ -172,8 +172,8 @@ angular.module('integrationApp')
       MODE = null;
       $scope.enableScrollView();
 
-      if (Math.abs(famous.bag.first("scrollView").getVelocity()) < 0.001 && !lines){
-        console.log(famous.bag.first("scrollView").getVelocity())
+      if (Math.abs($famous.bag.first("scrollView").getVelocity()) < 0.001 && !lines){
+        console.log($famous.bag.first("scrollView").getVelocity())
         linesOut();
       }
     })
@@ -216,7 +216,7 @@ angular.module('integrationApp')
 
     $scope.testStrips = function(){
       $scope.strips.forEach( function (s,i){
-        var mod = famous.bag.first("animateStrip" + i);
+        var mod = $famous.bag.first("animateStrip" + i);
         mod.reset();
         Timer.setTimeout(function(i) {
           mod.play();

@@ -1,20 +1,18 @@
 'use strict';
 
 angular.module('integrationApp')
-  .presenter('TimbrePres', function ($scope, famous) {
+  .presenter('TimbrePres', function ($scope, $famous) {
     console.log('scope', $scope); //shares same scope as TimbreCtrl
-    console.log('bag', famous.bag._contents); //has access to items created in DOM
-    var Transform       = require('famous/core/Transform');
-    var Timer           = require('famous/utilities/Timer');
-    $scope.bag = famous.bag
+    console.log('bag', $famous.bag._contents); //has access to items created in DOM
+    var Transform = require('famous/core/Transform');
+    var Timer = require('famous/utilities/Timer');
+    $scope.bag = $famous.bag
 
-
-
-    var scrollview = famous.bag.first("scrollView");
+    var scrollview = $famous.bag.first("scrollView");
 
     $scope.fireLinesAnimation = function(){
-      famous.bag.first('animateTest').replay();
-      console.log(window.zz = famous.bag.first('animateTest'))
+      $famous.bag.first('animateTest').replay();
+      console.log(window.zz = $famous.bag.first('animateTest'))
     }
     // oh man dont mess with this... default is so much smoother
     // scrollview.setOptions({margin:20000, friction: 0.002, drag: 0.0001, speedLimit : 5})
@@ -63,7 +61,7 @@ angular.module('integrationApp')
         featureOffset: 280
     };
     $scope.resetStrips = function(){
-        var strips = famous.bag.all("stripMod");
+        var strips = $famous.bag.all("stripMod");
         var topOffset = testOptions.topOffset;
         var stripOffset = testOptions.stripOffset;
         var stripWidth = testOptions.stripWidth;
@@ -81,7 +79,7 @@ angular.module('integrationApp')
 
     $scope.animateStrips = function(){
         $scope.resetStrips();
-        var strips = famous.bag.all("stripMod");
+        var strips = $famous.bag.all("stripMod");
         var transition = {
             duration: 400,
             curve: 'easeOut'
@@ -101,8 +99,8 @@ angular.module('integrationApp')
     window.Transform = Transform
     $scope.eventsOut = function(){
       var transition = { duration: 400, curve: 'easeOut'};
-      var left = famous.bag.all("left");
-      var right = famous.bag.all("right");
+      var left = $famous.bag.all("left");
+      var right = $famous.bag.all("right");
 
       left.forEach(function (l,i){
         l.transformFrom(l.getTransform());       

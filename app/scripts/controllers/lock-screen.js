@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('integrationApp')
-  .controller('LockScreenCtrl', function ($scope, famous) {
-    var EventHandler = famous['famous/core/EventHandler'];
+  .controller('LockScreenCtrl', function ($scope, $famous) {
+    var EventHandler = $famous['famous/core/EventHandler'];
     $scope.enginePipe = new EventHandler();
 
     //TODO:  either set the scrollview's initial position to the second page,
@@ -114,7 +114,7 @@ angular.module('integrationApp')
 
     var _scrollView = undefined;
     $scope.bgOpacity = function(){
-      _scrollView = _scrollView || famous.find('#main-scroll-view')[0].renderNode;
+      _scrollView = _scrollView || $famous.find('#main-scroll-view')[0].renderNode;
       if(_scrollView){
         var perPosition = $scope.scrollXPosition();
         return perPosition;
@@ -123,7 +123,7 @@ angular.module('integrationApp')
     };
 
     $scope.scrollXPosition = function(){
-      _scrollView = _scrollView || famous.find('#main-scroll-view')[0].renderNode;
+      _scrollView = _scrollView || $famous.find('#main-scroll-view')[0].renderNode;
       if(_scrollView && _scrollView._node){
         var page = _scrollView._node.index;
         var absPosition = _width * page + _scrollView.getPosition();
@@ -141,11 +141,11 @@ angular.module('integrationApp')
     }
 
     $scope.fireButtonAnimation = function(index){
-      famous.find('#number-button-animation-' + index)[0].replay();
+      $famous.find('#number-button-animation-' + index)[0].replay();
     }
 
     $scope.fireDotShakeAnimation = function(callback){
-      famous.find('#dot-shake-animation')[0].replay(callback);
+      $famous.find('#dot-shake-animation')[0].replay(callback);
     }
 
   });

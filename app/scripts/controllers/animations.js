@@ -1,14 +1,14 @@
 'use strict';
 
 angular.module('integrationApp')
-  .controller('AnimationsCtrl', function ($scope, famous) {
+  .controller('AnimationsCtrl', function ($scope, $famous) {
     window.s = $scope;
-    var Transitionable = famous['famous/transitions/Transitionable'];
-    var GenericSync = famous['famous/inputs/GenericSync'];
-    var RotateSync = famous['famous/inputs/RotateSync'];
-    var PinchSync = famous['famous/inputs/PinchSync'];
-    var Surface = famous['famous/core/Surface'];
-    var EventHandler = famous['famous/core/EventHandler'];
+    var Transitionable = $famous['famous/transitions/Transitionable'];
+    var GenericSync = $famous['famous/inputs/GenericSync'];
+    var RotateSync = $famous['famous/inputs/RotateSync'];
+    var PinchSync = $famous['famous/inputs/PinchSync'];
+    var Surface = $famous['famous/core/Surface'];
+    var EventHandler = $famous['famous/core/EventHandler'];
 
     var _width = window.innerWidth;
     var _height = window.innerHeight;
