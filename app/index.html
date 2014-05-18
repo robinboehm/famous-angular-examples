@@ -23,23 +23,24 @@
         <!-- build:css({.tmp,app}) styles/main.css -->
         <link rel="stylesheet" href="web-fonts/open-sans.css">
         <link rel="stylesheet" href="styles/main.css">
-        <!--<link rel="stylesheet" href="styles/famous.css">-->
+        <link rel="stylesheet" href="bower_components/famous-angular/dist/famous-angular.css">
         <link rel="stylesheet" href="styles/timbre.css">
         <link rel="stylesheet" href="styles/lock-screen.css">
-        <link rel="stylesheet" href="bower_components/famous-angular/dist/famous-angular.css">
         <!-- endbuild -->
     </head>
     <body>
 
 
-        <object id="tuio" type="application/x-tuio" style="width: 0px; height: 0px;">
-        </object>
+        <!-- <object id="tuio" type="application/x-tuio" style="width: 0px; height: 0px;">
+        </object> -->
         <!--[if lt IE 7]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please
             <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-
-        <div class="container" ui-view></div>
+        <div style="position: relative;">
+        <img style="position: absolute; left: 0; top: 0; width: 420px; z-index: 1" src="images/iphone-5s-frame.png" style="width: 340px;" />
+        <div style="position: absolute; left: 52px; top: 128px; z-index: 2"  ui-view></div>
+        </div>
 
 
         <!--[if lt IE 9]>

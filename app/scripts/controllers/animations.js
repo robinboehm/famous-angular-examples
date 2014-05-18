@@ -11,8 +11,8 @@ angular.module('integrationApp')
     var Surface = $famous['famous/core/Surface'];
     var EventHandler = $famous['famous/core/EventHandler'];
 
-    var _width = window.innerWidth;
-    var _height = window.innerHeight;
+    var _width = 320;
+    var _height = 568;
     var _r = 75;
     var sizes = $scope.sizes = {
       margins: {
