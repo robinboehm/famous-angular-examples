@@ -11,7 +11,7 @@
     "jquery": "~2.1.0",
     "angular-animate": "~1.2.16",
     "angular-touch": "~1.2.16",
-    "famous-angular": "git@github.com:FamousInternal/famous-angular.git",
+    "famous-angular": "ssh://git@github.com/FamousInternal/famous-angular.git",
     "famous": "~0.1.2"
   }
 }
