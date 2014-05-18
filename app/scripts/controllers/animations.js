@@ -1,5 +1,6 @@
 'use strict';
 
+
 angular.module('integrationApp')
   .controller('AnimationsCtrl', function ($scope, $famous) {
     window.s = $scope;
