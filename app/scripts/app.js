@@ -1,12 +1,12 @@
 angular.module('integrationApp',['famous.angular', 'ui.router', 'ngAnimate'])
   .config(function($stateProvider, $urlRouterProvider){
 
-    $urlRouterProvider.otherwise("/");
+    $urlRouterProvider.otherwise("/animations");
     $stateProvider
-      .state("main", {
-        url: "/",
-        templateUrl: "views/animations.html"
-      })
+      // .state("main", {
+      //   url: "/",
+      //   templateUrl: "views/animations.html"
+      // })
       .state("timbre", {
         url: "/timbre",
         templateUrl: "views/timbre.html",
