@@ -1,6 +1,6 @@
-<div class="lock-screen">
-  <fa-app fa-pipe-to="enginePipe" style="width: 320px; height: 568px;">
-    <fa-view id="background-image">
+<div class="lock-screen" ng-controller="LockScreenCtrl">
+  <fa-app style="width: 320px; height: 568px;">
+    <fa-view id="background-image" fa-pipe-to="enginePipe">
       <fa-modifier id="clear-background">
         <fa-image-surface fa-image-url="images/lock-screen/monkey.jpg" fa-size="sizes.bgImage">
         </fa-image-surface>
@@ -28,7 +28,7 @@
     <fa-scroll-view id="main-scroll-view" fa-start-index="1" fa-pipe-from="enginePipe" fa-options="options.mainScrollView">
 
       <!-- Left panel -->
-      <fa-view id="number-pad">
+      <fa-view id="number-pad" fa-pipe-to="enginePipe">
 
         <!-- Header -->
         <fa-modifier fa-translate="positions.enterPasscodeText" fa-size="sizes.enterPasscodeSurface">
@@ -83,7 +83,7 @@
 
               <!-- Flash-on-tap overlay -->
               <fa-modifier fa-opacity="0" id="{{'number-button-' + $index}}" fa-translate="[0,0,50]">
-                <fa-surface ng-if="numberButton.number !== ''" fa-size="sizes.numberButton" fa-tap="buttonTap($index, numberButton)" fa-pipe-to="enginePipe">
+                <fa-surface ng-if="numberButton.number !== ''" fa-size="sizes.numberButton" fa-tap="buttonTap($index, numberButton)" fa-click="buttonTap($index, numberButton)" fa-pipe-to="enginePipe">
                   <img class="ring" src="images/lock-screen/number-button-fill.svg" />
                 </fa-surface>
               </fa-modifier>
@@ -117,12 +117,12 @@
           <fa-surface class="no-pointer">Emergency</fa-surface>
         </fa-modifier>
         <fa-modifier fa-origin="[1,0]" fa-translate="positions.deleteText">
-          <fa-surface fa-tap="unshiftInputDots()"><div style="text-align: right">Delete</div></fa-surface>
+          <fa-surface fa-tap="unshiftInputDots()" fa-click="unshiftInputDots()"><div style="text-align: right">Delete</div></fa-surface>
         </fa-modifier>
       </fa-view>
 
       <!-- Right panel -->
-      <fa-view id="slide-screen">
+      <fa-view id="slide-screen" fa-pipe-to="enginePipe">
         
         <!-- Clock and calendar -->
         <fa-modifier fa-translate="positions.clock">
@@ -134,7 +134,7 @@
 
         <!-- Slide to unlock text -->
         <fa-modifier fa-translate="positions.slideToUnlockText" fa-opacity=".5">
-          <fa-surface>
+          <fa-surface fa-pipe-to="enginePipe">
             <div class="slide-to-unlock">
               <img class="mask" src="images/lock-screen/slide-to-unlock-mask-white.svg" />
             </div>

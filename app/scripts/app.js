@@ -14,8 +14,7 @@ angular.module('integrationApp',['famous.angular', 'ui.router', 'ngAnimate'])
       })
       .state("lock-screen", {
         url: "/lock-screen",
-        templateUrl: "views/lock-screen.html",
-        controller: "LockScreenCtrl"
+        templateUrl: "views/lock-screen.html"
       })
       .state("modifiers", {
         url: "/modifiers",
@@ -27,7 +26,8 @@ angular.module('integrationApp',['famous.angular', 'ui.router', 'ngAnimate'])
       })
       .state("animations", {
         url: "/animations",
-        templateUrl: "views/animations.html"
+        templateUrl: "views/animations.html",
+        controller: "AnimationsCtrl"
       })
       .state("repeat", {
         url: "/repeat",

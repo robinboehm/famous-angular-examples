@@ -3,7 +3,10 @@
 angular.module('integrationApp')
   .controller('LockScreenCtrl', function ($scope, $famous) {
     var EventHandler = $famous['famous/core/EventHandler'];
+    var Engine = $famous['famous/core/Engine'];
     $scope.enginePipe = new EventHandler();
+    Engine.pipe($scope.enginePipe);
+
 
     //TODO:  either set the scrollview's initial position to the second page,
     //       or make it double-wide and offset it x: -1 * screenWidth
@@ -107,6 +110,11 @@ angular.module('integrationApp')
       }
     }
 
+    var val = [0,0,200]
+    $scope.move = function(){
+      return val;
+    }
+
     $scope.unshiftInputDots = function(){
       _dotIndex = Math.max(-1,(_dotIndex - 2));
       $scope.shiftInputDots();
@@ -123,6 +131,7 @@ angular.module('integrationApp')
     };
 
     $scope.scrollXPosition = function(){
+      window.$f = $famous;
       _scrollView = _scrollView || $famous.find('#main-scroll-view')[0].renderNode;
       if(_scrollView && _scrollView._node){
         var page = _scrollView._node.index;
