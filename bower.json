@@ -13,5 +13,8 @@
     "angular-touch": "~1.2.16",
     "famous-angular": "ssh://git@github.com/FamousInternal/famous-angular.git",
     "famous": "~0.1.2"
+  },
+  "resolutions": {
+    "famous": "~0.2.0"
   }
 }
