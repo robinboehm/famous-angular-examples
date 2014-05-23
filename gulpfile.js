@@ -34,5 +34,6 @@ gulp.task('default', function() {
 	app.use(require('connect-livereload')());
 	app.use(express.static(EXPRESS_ROOT));
 	app.listen(EXPRESS_PORT);
+	console.log ("Server listening on port "+EXPRESS_PORT+ ". Open http://localhost:"+EXPRESS_PORT+" in your browser.");
 	gulp.start('watch');
 });
