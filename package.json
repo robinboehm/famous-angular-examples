@@ -1,12 +1,12 @@
 {
-  "name": "famous-angular",
-  "description": "Allow famo.us components to work seamlessly with other components inside existing or future Angular apps",
-  "version": "0.0.0",
-  "license": "",
-  "homepage": "https://github.com/FamousInternal/famous-angular",
+  "name": "famous-angular-examples",
+  "description": "Integration examples and demos for famous-angular",
+  "version": "0.0.4",
+  "license": "GPL v2.0",
+  "homepage": "https://github.com/thomasstreet/famous-angular-examples",
   "repository": {
     "type": "git",
-    "url": "https://github.com/FamousInternal/famous-angular.git"
+    "url": "https://github.com/thomasstreet/famous-angular-examples.git"
   },
   "dependencies": {},
   "devDependencies": {

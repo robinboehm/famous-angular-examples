@@ -1,6 +1,6 @@
 {
   "name": "integration",
-  "version": "0.0.0",
+  "version": "0.0.4",
   "dependencies": {
     "angular": "1.2.16",
     "json3": "~3.2.6",
@@ -10,8 +10,8 @@
     "underscore": "~1.6.0",
     "angular-animate": "~1.2.16",
     "angular-touch": "~1.2.16",
-    "famous-angular": "~0.0.11",
-    "famous": "~0.1.2"
+    "famous-angular": "~0.0.12",
+    "famous": "~0.2.0"
   },
   "resolutions": {
     "famous": "~0.2.0"
