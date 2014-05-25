@@ -1,8 +1,8 @@
 {
   "name": "famous-angular-examples",
   "description": "Integration examples and demos for famous-angular",
-  "version": "0.0.4",
-  "license": "GPL v2.0",
+  "version": "0.0.5",
+  "license": "MPL v2.0",
   "homepage": "https://github.com/thomasstreet/famous-angular-examples",
   "repository": {
     "type": "git",
