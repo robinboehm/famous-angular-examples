@@ -9,7 +9,16 @@ angular.module('integrationApp')
     var RotateSync = $famous['famous/inputs/RotateSync'];
     var PinchSync = $famous['famous/inputs/PinchSync'];
     var Surface = $famous['famous/core/Surface'];
+    var Transform = $famous['famous/core/Transform'];
     var EventHandler = $famous['famous/core/EventHandler'];
+
+    $scope.test = function(){
+      return Math.random();
+    }
+
+    $scope.testArray = function(){
+      return [Math.random() * 320, Math.random() * 568];
+    }
 
     var _width = 320;
     var _height = 568;
@@ -91,6 +100,10 @@ angular.module('integrationApp')
         1000
       ]
     };
+
+    $scope.testTransform = new Transitionable(Transform.translate.apply(this, $scope.positions.centerSquare));
+    // $scope.testTransform.set(Transform.translate(0, 0, 0), {duration: 2500, curve: 'easeOut'})
+    
 
     var tran = new Transitionable(0);
 

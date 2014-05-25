@@ -8,9 +8,9 @@
       <fa-surface  fa-touchstart="mrow" class="animations-text">Scroll Up/Down</fa-surface>
     </fa-modifier> -->
 
-    <fa-modifier id="wholeThing" fa-size="[sizes.width, sizes.height]" fa-origin="[.5, .5]">
+    <fa-modifier id="wholeThing" fa-size="[sizes.width, sizes.height]" fa-origin="[.5, .5]" fa-align="[.5, .5]">
     
-      <fa-modifier fa-translate="positions.centerSquare">
+      <fa-modifier fa-transform="testTransform">
         <fa-surface class="center-square" fa-size="[2 * sizes.triangle + .5, 2 * sizes.triangle + .5]" ></fa-surface>
       </fa-modifier>
 
@@ -93,7 +93,8 @@
       <fa-modifier
         fa-size="[2.828 * sizes.triangle, 2.828 * sizes.triangle]"
         fa-translate="positions.centerContent"
-        fa-rotate-z="-.785">
+        fa-rotate-z="-.785"
+        fa-transform-order="['translate', 'rotateZ']">
         <fa-modifier id="contentMod">
           <fa-surface class="center-content">
             {{getContent()}}
