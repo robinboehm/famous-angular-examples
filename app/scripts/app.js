@@ -3,43 +3,17 @@ angular.module('integrationApp',['famous.angular', 'ui.router', 'ngAnimate'])
 
     $urlRouterProvider.otherwise("/animations");
     $stateProvider
-      // .state("main", {
-      //   url: "/",
-      //   templateUrl: "views/animations.html"
-      // })
-      .state("timbre", {
-        url: "/timbre",
-        templateUrl: "views/timbre.html",
-        controller: "TimbreCtrl"
-      })
       .state("lock-screen", {
         url: "/lock-screen",
         templateUrl: "views/lock-screen.html"
-      })
-      .state("modifiers", {
-        url: "/modifiers",
-        templateUrl: "views/modifiers.html"
-      })
-      .state("makemefamous", {
-        url: "/makemefamous",
-        templateUrl: "views/makemefamous.html"
       })
       .state("animations", {
         url: "/animations",
         templateUrl: "views/animations.html",
         controller: "AnimationsCtrl"
       })
-      .state("repeat", {
-        url: "/repeat",
-        templateUrl: "views/repeat.html"
-      })
       .state("demo", {
         url: "/demo",
         templateUrl: "views/demo.html"
-      })
-
-      .state("reading", {
-        url: "/reading",
-        templateUrl: "views/reading.html"
       });
     });
