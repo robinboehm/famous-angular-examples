@@ -12,6 +12,11 @@ angular.module('integrationApp',['famous.angular', 'ui.router', 'ngAnimate'])
         templateUrl: "views/animations.html",
         controller: "AnimationsCtrl"
       })
+      .state("transitionables", {
+        url: "/transitionables",
+        templateUrl: "views/transitionables.html",
+        controller: "TransitionablesCtrl"
+      })
       .state("demo", {
         url: "/demo",
         templateUrl: "views/demo.html"

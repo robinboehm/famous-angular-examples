@@ -9,6 +9,7 @@ angular.module('integrationApp')
     var RotateSync = $famous['famous/inputs/RotateSync'];
     var PinchSync = $famous['famous/inputs/PinchSync'];
     var Surface = $famous['famous/core/Surface'];
+    var Engine = $famous['famous/core/Engine'];
     var Transform = $famous['famous/core/Transform'];
     var EventHandler = $famous['famous/core/EventHandler'];
 
@@ -120,6 +121,7 @@ angular.module('integrationApp')
 
     $scope.eventHandler = new EventHandler();
     $scope.eventHandler.pipe($scope.sync);
+    Engine.pipe($scope.eventHandler)
 
     var _contents = [
       "One-way data binding",
