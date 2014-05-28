@@ -1,5 +1,5 @@
 'use strict';
-
+//adapted from @continuata's code at https://github.com/Famous/famous-angular/issues/72 
 angular.module('integrationApp')
   .controller('TransitionablesCtrl', function ($scope, $famous) {
   var Transitionable = $famous['famous/transitions/Transitionable']
