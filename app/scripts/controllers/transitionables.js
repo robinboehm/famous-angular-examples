@@ -12,10 +12,8 @@ angular.module('integrationApp')
   $scope.$watch('number', function (num) {
     var arr = [];
     for (var i = 0; i < $scope.number; i++) {
-      (function(){
-        var trans = new Transitionable([$scope.offset, 50 * i, 1]);
-        arr.push({bg_color: '#333', color: '#ccc', trans: trans, index: i});
-      })();
+      var trans = new Transitionable([$scope.offset, 50 * i, 1]);
+      arr.push({bg_color: '#333', color: '#ccc', trans: trans, index: i});
     }
     $scope.boxes = arr;
   });
