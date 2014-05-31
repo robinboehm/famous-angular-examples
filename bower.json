@@ -10,7 +10,7 @@
     "underscore": "~1.6.0",
     "angular-animate": "~1.2.16",
     "angular-touch": "~1.2.16",
-    "famous-angular": "~0.0.13",
+    "famous-angular": "~0.0.14",
     "famous": "~0.2.0"
   },
   "resolutions": {
