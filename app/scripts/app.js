@@ -1,7 +1,7 @@
 angular.module('integrationApp',['famous.angular', 'ui.router', 'ngAnimate'])
   .config(function($stateProvider, $urlRouterProvider){
 
-    $urlRouterProvider.otherwise("/animations");
+    $urlRouterProvider.otherwise("/lock-screen");
     $stateProvider
       .state("lock-screen", {
         url: "/lock-screen",
