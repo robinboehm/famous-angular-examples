@@ -21,6 +21,11 @@ angular.module('integrationApp',['famous.angular', 'ui.router', 'ngAnimate'])
         url: "/demo",
         templateUrl: "views/demo.html"
       })
+      .state("ng-class", {
+        url: "/ng-class",
+        templateUrl: "views/ng-class.html",
+        controller: "NgClassCtrl"
+      }) 
       .state("flipper", {
         url: "/flipper",
         templateUrl: "views/flipper.html",
