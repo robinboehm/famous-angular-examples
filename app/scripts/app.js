@@ -31,6 +31,11 @@ angular.module('integrationApp',['famous.angular', 'ui.router', 'ngAnimate'])
         templateUrl: "views/render-node.html",
         controller: "RenderNodeCtrl"
       }) 
+      .state("header-footer-layout", {
+        url: "/header-footer-layout",
+        templateUrl: "views/header-footer-layout.html",
+        controller: "HeaderFooterLayoutCtrl"
+      }) 
       .state("flipper", {
         url: "/flipper",
         templateUrl: "views/flipper.html",

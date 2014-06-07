@@ -12,8 +12,5 @@
     "angular-touch": "~1.2.16",
     "famous-angular": "~0.0.15",
     "famous": "~0.2.0"
-  },
-  "resolutions": {
-    "famous": "~0.2.0"
   }
 }
