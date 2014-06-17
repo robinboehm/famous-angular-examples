@@ -109,7 +109,8 @@
     </fa-modifier>
   </fa-view>
 
-  <fa-animation event="testEvent" duration="1250">
+  <!-- <fa-animation event="testEvent" duration="1250"> -->
+  <fa-animation timeline="functionThatReturnsATimelineValueBetween0And1">
     <animate  targetModSelector="#topMod"
               field="rotateX"
               startValue="3.1415"

@@ -12,6 +12,15 @@ angular.module('integrationApp')
     var Engine = $famous['famous/core/Engine'];
     var Transform = $famous['famous/core/Transform'];
     var EventHandler = $famous['famous/core/EventHandler'];
+    var MouseSync   = $famous["famous/inputs/MouseSync"];
+    var TouchSync   = $famous["famous/inputs/TouchSync"];
+    var ScrollSync   = $famous["famous/inputs/ScrollSync"];
+
+    GenericSync.register({
+      "mouse" : MouseSync,
+      "touch" : TouchSync,
+      "scroll": ScrollSync
+    });
 
     $scope.test = function(){
       return Math.random();
@@ -108,9 +117,9 @@ angular.module('integrationApp')
 
     var tran = new Transitionable(0);
 
-    $scope.sync = new GenericSync(function(){
-      return tran.get();
-    }, {direction: GenericSync.DIRECTION_Y});
+    tran.set(1, {duration: 1000})
+
+    $scope.sync = new GenericSync(["mouse", "touch"], {direction: GenericSync.DIRECTION_Y});
 
     var SCROLL_SENSITIVITY = 1200; //inverse
     $scope.sync.on('update', function(data){
