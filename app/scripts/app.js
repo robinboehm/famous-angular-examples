@@ -7,6 +7,11 @@ angular.module('integrationApp',['famous.angular', 'ui.router', 'ngAnimate'])
         url: "/lock-screen",
         templateUrl: "views/lock-screen.html"
       })
+      .state("animate", {
+        url: "/animate",
+        templateUrl: "views/animate.html",
+        controller: "AnimateCtrl"
+      })
       .state("animations", {
         url: "/animations",
         templateUrl: "views/animations.html",
