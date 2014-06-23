@@ -3,6 +3,10 @@
 
 angular.module('integrationApp')
   .controller('AnimateCtrl', function ($scope, $famous) {
+    //This route tests fa-animate functionality
+    //As of authoring (6/22,) fa-animate is not yet
+    //supported in the core library
+
     var Transitionable = $famous['famous/transitions/Transitionable'];
     var EventHandler = $famous['famous/core/EventHandler'];
     var STARTING_NUMBER = 1;

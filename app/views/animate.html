@@ -1,9 +1,9 @@
 <fa-app style="width: 320px; height: 568px; margin: 0;">
-  <fa-scroll-view fa-pipe-from="handler">
+  <!-- <fa-scroll-view fa-pipe-from="handler"> -->
     <fa-modifier
       fa-index="$index"
       ng-repeat="item in items track by item.id"
-      fa-translate="[item.transX.get(), 0, 1]"
+      fa-translate="[item.transX.get(), $index * 100, 1]"
       fa-size="[undefined, 100]"
       fa-opacity="item.opacity"
       fa-animate-leave="leaveAnimation(item)"
@@ -17,5 +17,5 @@
         {{item.name}}
       </fa-surface>
     </fa-modifier>
-  </fa-scroll-view>
+  <!-- </fa-scroll-view> -->
 </fa-app>
