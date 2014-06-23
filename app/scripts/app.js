@@ -1,4 +1,4 @@
-angular.module('integrationApp',['famous.angular', 'ui.router', 'ngAnimate'])
+angular.module('integrationApp',['famous.angular', 'ui.router'])
   .config(function($stateProvider, $urlRouterProvider){
 
     $urlRouterProvider.otherwise("/lock-screen");
@@ -40,6 +40,11 @@ angular.module('integrationApp',['famous.angular', 'ui.router', 'ngAnimate'])
         url: "/header-footer-layout",
         templateUrl: "views/header-footer-layout.html",
         controller: "HeaderFooterLayoutCtrl"
+      }) 
+      .state("flexible-layout", {
+        url: "/flexible-layout",
+        templateUrl: "views/flexible-layout.html",
+        controller: "FlexibleLayoutCtrl"
       }) 
       .state("flipper", {
         url: "/flipper",
