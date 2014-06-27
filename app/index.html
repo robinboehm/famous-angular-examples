@@ -41,9 +41,9 @@
 
 
         <!-- TODO:  if window width is less than 385px, don't show the iphone (use media queries) -->
-        <div style="position: relative;">
-        <img style="position: absolute; left: 0; top: 0; width: 385px; z-index: 1" src="images/iphone-5s-white-frame.png" />
-        <div style="position: absolute; left: 34px; top: 121px; z-index: 2"  ui-view></div>
+        <div style="position: relative; width: 385px; margin: 0 auto;">
+            <img class="phone-frame" style="" src="images/iphone-5s-white-frame.png" />
+            <div class="phone-view-container"   ui-view></div>
         </div>
 
 

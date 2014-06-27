@@ -4,6 +4,34 @@ body {
 }
 
 
+.phone-frame{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 385px;
+  z-index: 1;
+}
+
+.phone-view-container{
+  position: absolute;
+  left: 34px;
+  top: 121px;
+  width: 320px;
+  z-index: 2;
+}
+
+@media (max-width: 385px) and (max-height: 806px){
+  .phone-frame{
+    display: none;
+  }
+
+  .phone-view-container{
+    left: 0;
+    right: 0;
+    top: 0;
+  }
+}
+
 
 .famous-angular-container {
   position: fixed;
