@@ -2,7 +2,7 @@
 
 
 angular.module('integrationApp')
-  .controller('AnimationsCtrl', function ($scope, $famous) {
+  .controller('AnimationsCtrl', function ($scope, $famous, $interval) {
     window.s = $scope;
     var Transitionable = $famous['famous/transitions/Transitionable'];
     var GenericSync = $famous['famous/inputs/GenericSync'];
@@ -39,11 +39,15 @@ angular.module('integrationApp')
     };
 
 
-    setTimeout(function(){
+    $timeout(function(){
       $scope.$broadcast('testEvent')
     }, 1000)
 
-    $scope.twoWayTest = "Two-way data binding";
+    $scope.twoWayTest = "Two-way";
+
+    $scope.log = function(){
+      console.log('test');
+    };
 
     $scope.positions = {
       scrollText: [
@@ -134,14 +138,10 @@ angular.module('integrationApp')
       return _content;
     };
 
-    var toggleContent = function(){
+    $interval(function(){
       _content = _contents[(_contentIndex++)%_contents.length];
-      if(!$scope.$$phase)
-        $scope.$apply();
-    };
+    }, 1000);
 
-    setInterval(toggleContent, 1000);
-    
     $scope.functionThatReturnsATimelineValueBetween0And1 = function(){
       return tran.get();
     }

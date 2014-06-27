@@ -2,7 +2,7 @@
 
 
 angular.module('integrationApp')
-  .controller('AnimateCtrl', function ($scope, $famous) {
+  .controller('AnimateCtrl', function ($scope, $famous, $interval) {
     //This route tests fa-animate functionality
     //As of authoring (6/22,) fa-animate is not yet
     //supported in the core library
@@ -56,10 +56,6 @@ angular.module('integrationApp')
       return 1000;
     };
 
-    setInterval(function(){
-      $scope.add();
-      if(!$scope.$$phase)
-        $scope.$apply();
-    }, 1000)
+    $interval($scope.add, 1000)
 
   });

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('integrationApp')
-  .controller('DemoCtrl', function ($scope, $famous) {
+  .controller('DemoCtrl', function ($scope, $famous, $interval) {
     var GenericSync = $famous['famous/inputs/GenericSync'];
     var Transitionable = $famous['famous/transitions/Transitionable']
     var EventHandler = $famous['famous/core/EventHandler']
@@ -44,12 +44,10 @@ angular.module('integrationApp')
       }
     });
 
-    setInterval(function(){
+    $interval(function(){
       for(var i = 0; i < ELEMENTS; i++){
         $scope.surfs[i].content = _.sample(strings);
       }
-      if(!$scope.$$phase)
-        $scope.$apply();
     }, 500);
 
     $scope.enginePipe = new EventHandler();
