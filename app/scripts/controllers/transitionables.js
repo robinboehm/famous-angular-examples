@@ -13,7 +13,7 @@ angular.module('integrationApp')
     var arr = [];
     for (var i = 0; i < $scope.number; i++) {
       var trans = new Transitionable([$scope.offset, 50 * i, 1]);
-      arr.push({bg_color: '#333', color: '#ccc', trans: trans, index: i});
+      arr.push({backgroundColor: '#333', color: '#ccc', trans: trans, index: i});
     }
     $scope.boxes = arr;
   });
