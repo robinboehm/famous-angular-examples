@@ -16,19 +16,11 @@ angular.module('integrationApp')
     var TouchSync   = $famous["famous/inputs/TouchSync"];
     var ScrollSync   = $famous["famous/inputs/ScrollSync"];
 
-    // GenericSync.register({
-    //   "mouse" : MouseSync,
-    //   "touch" : TouchSync,
-    //   "scroll": ScrollSync
-    // });
-
-    $scope.test = function(){
-      return Math.random();
-    }
-
-    $scope.testArray = function(){
-      return [Math.random() * 320, Math.random() * 568];
-    }
+    GenericSync.register({
+      // "mouse" : MouseSync,
+      // "touch" : TouchSync,
+      "scroll": ScrollSync
+    });
 
     var _width = 320;
     var _height = 568;
@@ -112,21 +104,20 @@ angular.module('integrationApp')
     };
 
     $scope.testTransform = new Transitionable(Transform.translate.apply(this, $scope.positions.centerSquare));
-    // $scope.testTransform.set(Transform.translate(0, 0, 0), {duration: 2500, curve: 'easeOut'})
     
 
     var tran = new Transitionable(0);
 
     tran.set(1, {duration: 1000})
 
-    // $scope.sync = new GenericSync(["mouse", "touch"], {direction: GenericSync.DIRECTION_Y});
+    $scope.sync = new GenericSync(["mouse", "touch"], {direction: GenericSync.DIRECTION_Y});
 
     var SCROLL_SENSITIVITY = 1200; //inverse
-    // $scope.sync.on('update', function(data){
-    //   var newVal = Math.max(0,
-    //     Math.min(1, data.delta / SCROLL_SENSITIVITY + tran.get()));
-    //   tran.set(newVal);
-    // });
+    $scope.sync.on('update', function(data){
+      var newVal = Math.max(0,
+        Math.min(1, data.delta / SCROLL_SENSITIVITY + tran.get()));
+      tran.set(newVal);
+    });
 
     $scope.eventHandler = new EventHandler();
     // $scope.eventHandler.pipe($scope.sync);
